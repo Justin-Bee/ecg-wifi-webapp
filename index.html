@@ -14,10 +14,10 @@
         try {
             const result = await dynamodb.query({
                 TableName: 'ECGWifi',
-                KeyConditionExpression: 'partKey = :partKey',
+                KeyConditionExpression: 'serialNumber = :serialNumber',
                 ScanIndexForward: false,
                 Limit: 3,
-                ExpressionAttributeValues: {':partKey': { S: 'board'}}
+                ExpressionAttributeValues: {':serialNumber': { S: 'acg', S: 'temp'}}
             }).promise();
 
             return {
