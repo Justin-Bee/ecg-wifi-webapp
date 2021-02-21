@@ -29,5 +29,12 @@
             .catch(error => console.log('error', error));
     }
 </script>
+<form>
+    <label>Serial Lookup:</label>
+    <input type="text" id="fName">
+
+    <!-- set button onClick method to call function we defined passing input values as parameters -->
+    <button type="button" onclick="callAPI(document.getElementById('fName').value)">Call API</button>
+</form>
 </body>
 </html>
