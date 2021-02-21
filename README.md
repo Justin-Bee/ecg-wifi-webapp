@@ -2,6 +2,8 @@
 #ECE 554
 Authors: Justin Bee and Matias Blanc
 
+NodeJS application
+
 AWS amplify application
 URL: https://master.d30zp0554c2v1e.amplifyapp.com/
 
