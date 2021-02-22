@@ -6,25 +6,20 @@
 </head>
 <body>
 <h1>ECG WiFi monitoring</h1>
+<div id = 'myDiv'></div>
 <script>
     // define the callAPI function that takes a first name and last name as parameters
     var callAPI = (serial)=>{
         // instantiate a headers object
-        var myHeaders = new Headers();
-        // add content type header to object
-        myHeaders.append("Content-Type", "application/json");
-        // using built in JSON utility package turn object to string and store in a variable
-        // create a JSON object with parameters for API call and store in a variable
-        var requestOptions = {
-            method: 'GET',
-            headers: myHeaders,
-            redirect: 'follow'
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("myDiv").innerHTML = this.responseText;
+            }
         };
-        // make API call with parameters and use promises to get response
-        fetch("https://w1icmodz5j.execute-api.us-east-1.amazonaws.com/dev", requestOptions)
-            .then(response => response.text())
-            .then(result => alert(JSON.parse(result).body))
-            .catch(error => console.log('error', error));
+        xhttp.open("GET", "https://tqmlv0dfbh.execute-api.us-east-1.amazonaws.com/dev/", true);
+        xhttp.send();
+
     }
 </script>
 <form>

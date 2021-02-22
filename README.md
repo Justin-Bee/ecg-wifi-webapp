@@ -27,4 +27,4 @@ arn = arn:aws:dynamodb:us-east-1:137988547123:table/ECGWiFiMonitors
 
 curl -i -X POST -H "Content-Type: application/json" -d '{"serial":"testSerial", "adc": "10.0", "temp": "108.0"}' https://tqmlv0dfbh.execute-api.us-east-1.amazonaws.com/dev
 
-curl -H "Content-Type:application/json" -X GET https://tqmlv0dfbh.execute-api.us-eas https://tqmlv0dfbh.execute-api.us-east-1.amazonaws.com/dev/
+curl -H "Content-Type:application/json" -X GET  https://tqmlv0dfbh.execute-api.us-east-1.amazonaws.com/dev/
