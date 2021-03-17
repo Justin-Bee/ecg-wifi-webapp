@@ -9,7 +9,7 @@
 <div id = 'myDiv'></div>
 <script>
     // define the callAPI function that takes a first name and last name as parameters
-    var callAPI = (serial)=>{
+    var callAPI(serialNumber) = (serial)=>{
         // instantiate a headers object
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
@@ -17,7 +17,7 @@
                 document.getElementById("myDiv").innerHTML = this.responseText;
             }
         };
-        var endpoint = "https://tqmlv0dfbh.execute-api.us-east-1.amazonaws.com/dev/?serial=" +serial
+        var endpoint = "https://tqmlv0dfbh.execute-api.us-east-1.amazonaws.com/dev/?serial=" +serialNumber
         xhttp.open("GET", endpoint, true);
         xhttp.send();
 
