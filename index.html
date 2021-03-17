@@ -17,8 +17,8 @@
                 document.getElementById("myDiv").innerHTML = this.responseText;
             }
         };
-        var endpoint = "https://tqmlv0dfbh.execute-api.us-east-1.amazonaws.com/dev/?serial="
-        xhttp.open("GET", endpoint+serial, true);
+        var endpoint = "https://tqmlv0dfbh.execute-api.us-east-1.amazonaws.com/dev/?serial=" +serial
+        xhttp.open("GET", endpoint, true);
         xhttp.send();
 
     }
