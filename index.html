@@ -23,7 +23,7 @@
 
         const data = '{"serial":"' + serial + '"}'
         const xhr = new XMLHttpRequest()
-        xhr.open('POST', endpoint)
+        xhr.open('GET', endpoint)
         xhr.setRequestHeader('Content-type', 'application/json')
         xhr.send(JSON.stringify(data))
 
