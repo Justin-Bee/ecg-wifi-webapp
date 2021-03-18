@@ -7,6 +7,7 @@
 <body>
 <h1>ECG WiFi monitoring</h1>
 <div id = 'myDiv'></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 <script>
     // define the callAPI function that takes a first name and last name as parameters
     var callAPI = (serial)=>{
@@ -15,17 +16,30 @@
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 document.getElementById("myDiv").innerHTML = this.responseText;
+                var j = JSON.parse(this.responseText)
+                var dataPoints = [];
+                for (var i = 0; i<j.length; i++)
+                {
+                    dataPoints.push({x: i, y: parseInt(j[i].adc)});
+                }
+                var chart = new CanvasJS.Chart("chartContainer", {
+                    animationEnabled: true,
+                    theme: "light2",
+                    title:{
+                        text: "Simple Line Chart"
+                    },
+                    data: [{
+                        type: "line",
+                        indexLabelFontSize: 16,
+                        dataPoints: dataPoints
+                    }]
+                });
+                chart.render();
             }
         };
         var endpoint = "https://tqmlv0dfbh.execute-api.us-east-1.amazonaws.com/dev/?serial="+serial
         xhttp.open("GET", endpoint, true);
         xhttp.send();
-
-       // const data = '{"serial":"' + serial + '"}'
-       // const xhr = new XMLHttpRequest()
-       // xhr.open('GET', endpoint)
-       // xhr.setRequestHeader('Content-type', 'application/json')
-       // xhr.send(JSON.stringify(data))
 
     }
 </script>
