@@ -18,8 +18,14 @@
             }
         };
         var endpoint =encodeURI( "https://tqmlv0dfbh.execute-api.us-east-1.amazonaws.com/dev/?serial=" +String(serial))
-        xhttp.open("GET", endpoint, true);
-        xhttp.send();
+       // xhttp.open("GET", endpoint, true);
+       // xhttp.send();
+
+        const data = '{"serial":"' + serial + '"}'
+        const xhr = new XMLHttpRequest()
+        xhr.open('POST', endpoint)
+        xhr.setRequestHeader('Content-type', 'application/json')
+        xhr.send(JSON.stringify(data))
 
     }
 </script>
