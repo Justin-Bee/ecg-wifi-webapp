@@ -12,6 +12,7 @@
 <div id="chartContainer" style="height: 370px; width: 100%;"></div>
 
 <script>
+
     // define the callAPI function that takes a first name and last name as parameters
     var callAPI = (serial)=>{
         // instantiate a headers object
@@ -43,6 +44,7 @@
         var endpoint = "https://tqmlv0dfbh.execute-api.us-east-1.amazonaws.com/dev/?serial="+serial
         xhttp.open("GET", endpoint, true);
         xhttp.send();
+        setTimeout(callAPI(serial), 10000);
 
 
     }
