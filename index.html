@@ -29,7 +29,7 @@
                     animationEnabled: true,
                     theme: "light2",
                     title:{
-                        text: serial + "temperature: " + j[0].temp
+                        text: serial + " temperature: " + j[0].temp
                     },
                     data: [{
                         type: "line",
@@ -43,7 +43,7 @@
         var endpoint = "https://tqmlv0dfbh.execute-api.us-east-1.amazonaws.com/dev/?serial="+serial
         xhttp.open("GET", endpoint, true);
         xhttp.send();
-        setTimeout(callAPI(serial), 1000);
+
 
     }
 </script>
