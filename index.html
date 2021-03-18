@@ -17,15 +17,15 @@
                 document.getElementById("myDiv").innerHTML = this.responseText;
             }
         };
-        var endpoint = "https://tqmlv0dfbh.execute-api.us-east-1.amazonaws.com/dev/?"
-       // xhttp.open("GET", endpoint, true);
-       // xhttp.send();
+        var endpoint = "https://tqmlv0dfbh.execute-api.us-east-1.amazonaws.com/dev/?serial=Test"
+        xhttp.open("GET", endpoint, true);
+        xhttp.send();
 
-        const data = '{"serial":"' + serial + '"}'
-        const xhr = new XMLHttpRequest()
-        xhr.open('GET', endpoint)
-        xhr.setRequestHeader('Content-type', 'application/json')
-        xhr.send(JSON.stringify(data))
+       // const data = '{"serial":"' + serial + '"}'
+       // const xhr = new XMLHttpRequest()
+       // xhr.open('GET', endpoint)
+       // xhr.setRequestHeader('Content-type', 'application/json')
+       // xhr.send(JSON.stringify(data))
 
     }
 </script>
