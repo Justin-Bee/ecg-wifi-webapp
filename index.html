@@ -63,10 +63,10 @@
 
 <form>
     <label>Serial Lookup:</label>
-    <input type="text" id="fName">
+    <input type="text" id="fName1">
 
     <!-- set button onClick method to call function we defined passing input values as parameters -->
-    <button type="button" onclick="callAP(document.getElementById('fName').value)">Call API</button>
+    <button type="button" onclick="callAP(document.getElementById('fName1').value)">Call API</button>
 
 <div id="chart_div"></div>
     <script>
@@ -105,9 +105,9 @@
                                 title: 'Time'
                             },
                             vAxis: {
-                                title: 'Popularity'
+                                title: 'ADC'
                             },
-                            backgroundColor: '#f1f8e9'
+                            backgroundColor: '#00274C'
                         };
 
                         var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
