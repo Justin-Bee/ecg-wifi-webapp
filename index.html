@@ -32,7 +32,7 @@
                 var dataPoints = [];
                 for (var i = 0; i<j.length; i++)
                 {
-                    dataPoints.push({x: j[i].eventDateTime, y: parseInt(j[i].adc)});
+                    dataPoints.push({x: i, y: parseInt(j[i].adc)});
                 }
                 var chart = new CanvasJS.Chart("chartContainer", {
                     animationEnabled: true,
