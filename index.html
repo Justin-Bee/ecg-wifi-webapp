@@ -92,7 +92,13 @@
                         data.addColumn('number', 'X');
                         data.addColumn('number', 'Dogs');
 
-                        data.addRows([dataPoints]);
+                        // add each element via forEach loop
+                        dataPoints.forEach(function(value, index, array){
+                            data.addRow([
+                                value.x,
+                                value.y
+                            ]);
+                        })
 
                         var options = {
                             hAxis: {
