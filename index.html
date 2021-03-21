@@ -63,11 +63,13 @@
 
                         var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
                         chart.draw(data, options);
+                        console.log(dataPoints);
                         var i = 0;
                         while(i<5000)
                         {
                             i++;
                         }
+
                         dataPoints = [];
                         callAPI(serial);
                     }
