@@ -32,7 +32,8 @@
                     var dataPoints = [];
                     for (var i = 0; i<j.length; i++)
                     {
-                        dataPoints.push({x: (-1* parseInt(j[i].eventDateTime)), y: parseInt(j[i].adc)});
+                       // dataPoints.push({x: (-1* parseInt(j[i].eventDateTime)), y: parseInt(j[i].adc)});
+                        dataPoints.push({x: i, y: parseInt(j[i].adc)});
                     }
                     google.charts.load('current', {packages: ['corechart', 'line']});
                     google.charts.setOnLoadCallback(drawBackgroundColor);
