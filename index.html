@@ -43,7 +43,6 @@
 
                     function drawBackgroundColor() {
                         var data = new google.visualization.DataTable();
-                        data.title(serial + " temperature: " + j[0].temp);
                         data.addColumn('number', 'X');
                         data.addColumn('number', 'Heart Rate');
 
@@ -56,6 +55,7 @@
                         })
 
                         var options = {
+                            'title':serial + " temperature: " + j[0].temp,
                             hAxis: {
                                 title: 'Time'
                             },
