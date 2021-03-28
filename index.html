@@ -74,6 +74,11 @@
                             i++;
                         }
 
+                        if (parseFloat(j[0].temp) > 101.0 || parseFloat(j[0].temp)< 97.5)
+                        {
+                            alert("Emergency! Patient's temperature is in a dangerous range!");
+                        }
+
                         dataPoints = [];
                         callAPI(serial);
                     }
