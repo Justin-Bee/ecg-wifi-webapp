@@ -20,6 +20,7 @@
     <button type="button" onclick="callAPI(document.getElementById('fName').value)">Call API</button>
 </form>
 <div id="chart_div"></div>
+<div id="alert_div"></div>
     <script>
 
         // define the callAPI function that takes a first name and last name as parameters
@@ -76,7 +77,7 @@
 
                         if (parseFloat(j[0].temp) > 101.0 || parseFloat(j[0].temp)< 97.5)
                         {
-                            document.getElementById('chart_div').innerHTML = "<h2>Emergency! Patient's Temperature is in Dangerous Range!</h2>";
+                            document.getElementById('alert_div').innerHTML = "<h2>Emergency! Patient's Temperature is in Dangerous Range!</h2>";
                         }
 
                         dataPoints = [];
