@@ -76,7 +76,7 @@
 
                         if (parseFloat(j[0].temp) > 101.0 || parseFloat(j[0].temp)< 97.5)
                         {
-                            alert("Emergency! Patient's temperature is in a dangerous range!");
+                            document.getElementById('chart_div').innerHTML = "<h2>Emergency! Patient's Temperature is in Dangerous Range!</h2>";
                         }
 
                         dataPoints = [];
