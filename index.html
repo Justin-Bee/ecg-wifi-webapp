@@ -36,7 +36,7 @@
                     for (var i = 0; i<j.length; i++)
                     {
                        // dataPoints.push({x: (-1* parseInt(j[i].eventDateTime)), y: parseInt(j[i].adc)});
-                        dataPoints.push({x: i, y: parseInt(j[i].adc)});
+                        dataPoints.push({x: j[i].eventDateTime, y: parseInt(j[i].adc)});
                     }
 
                     google.charts.load('current', {packages: ['corechart', 'line']});
@@ -68,14 +68,14 @@
 
                         var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
                         chart.draw(data, options);
-                        console.log(dataPoints);
+                        //console.log(dataPoints);
                         var i = 0;
                         while(i<500)
                         {
                             i++;
                         }
 
-                        if (parseFloat(j[0].temp) > 101.0 || parseFloat(j[0].temp)< 97.5)
+                        if (parseFloat(j[0].temp) > 101.5 || parseFloat(j[0].temp)< 97.0)
                         {
                             document.getElementById('alert_div').innerHTML = "<h2>Emergency! Patient's Temperature is in Dangerous Range!</h2>";
                         }
