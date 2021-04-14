@@ -35,7 +35,7 @@
                     var dataPoints = [];
                     for (var i = 0; i<j.length; i++)
                     {
-                        dataPoints.push({x: i, y: parseFloat(j[i].adc)});
+                        dataPoints.push({x: i, y: parseInt(j[i].adc)});
                     }
 
                     google.charts.load('current', {packages: ['corechart', 'line']});
@@ -56,10 +56,14 @@
 
                         var options = {
                             'title':serial + " temperature: " + j[0].temp,                            hAxis: {
-                                title: 'Time'
+                                title: 'Data Points'
                             },
                             vAxis: {
-                                title: 'ADC',
+                                title: 'EKG',
+                                viewWindow: {
+                                    min: 0,
+                                    max: 20
+                                },
                                 ticks: [0,2,4,6,8,10,12,14,16,18]
                             },
                             backgroundColor: '#FFCB05'
@@ -75,7 +79,7 @@
                             document.getElementById('alert_div').innerHTML = "<h2>Emergency! Patient's Temperature is in Dangerous Range!</h2>";
                         }
 
-                        dataPoints = [];
+                        //dataPoints = [];
                         callAPI(serial);
                     }
                 }
