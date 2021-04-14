@@ -62,9 +62,9 @@
                                 title: 'EKG',
                                 viewWindow: {
                                     min: 0,
-                                    max: 20
+                                    max: 40
                                 },
-                                ticks: [0,2,4,6,8,10,12,14,16,18]
+                                ticks: [0,5,10,15,20,25,30,35,40]
                             },
                             backgroundColor: '#FFCB05'
                         };
@@ -74,10 +74,10 @@
                         //console.log(dataPoints);
                        
 
-                        if (parseFloat(j[0].temp) > 101.5 || parseFloat(j[0].temp)< 97.0)
-                        {
-                            document.getElementById('alert_div').innerHTML = "<h2>Emergency! Patient's Temperature is in Dangerous Range!</h2>";
-                        }
+                       // if (parseFloat(j[0].temp) > 101.5 || parseFloat(j[0].temp)< 97.0)
+                       // {
+                       //     document.getElementById('alert_div').innerHTML = "<h2>Emergency! Patient's Temperature is in Dangerous Range!</h2>";
+                       // }
 
                         //dataPoints = [];
                         callAPI(serial);
